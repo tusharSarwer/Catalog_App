@@ -2,10 +2,11 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
-  static const String id = "LoginPage";
+  static const String id = "login";
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -24,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
       });
 
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, HomePage.id);
+      await context.vxNav.push(Uri.parse(HomePage.id));
 
       setState(() {
         changedValue = false;
